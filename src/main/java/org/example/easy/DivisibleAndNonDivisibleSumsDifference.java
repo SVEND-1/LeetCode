@@ -1,4 +1,4 @@
-package org.example.Easy;
+package org.example.easy;
 
 public class DivisibleAndNonDivisibleSumsDifference {
     public static int differenceOfSums(int n, int m) {

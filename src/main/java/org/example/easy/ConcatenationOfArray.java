@@ -1,4 +1,4 @@
-package org.example.Easy;
+package org.example.easy;
 
 public class ConcatenationOfArray {
     public int[] getConcatenation(int[] nums) {

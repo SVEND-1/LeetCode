@@ -1,4 +1,4 @@
-package org.example.Medium;
+package org.example.medium;
 
 public class InsertGreatestCommonDivisorsInLinkedList {
     class ListNode {

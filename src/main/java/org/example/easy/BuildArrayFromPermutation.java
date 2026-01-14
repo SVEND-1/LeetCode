@@ -1,4 +1,4 @@
-package org.example.Easy;
+package org.example.easy;
 
 public class BuildArrayFromPermutation {
     public static void main(String[] args) {
