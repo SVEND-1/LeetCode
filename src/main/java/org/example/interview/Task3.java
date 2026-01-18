@@ -1,24 +1,21 @@
 package org.example.interview;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Stack;
 
 public class Task3 {
     //Проверка сбалансированности скобок:
     //   – Задание: Напишите метод, который проверяет, правильно ли расставлены скобки в строке (например, (), [], {}).
-    //   – Напишите метод, который проверяет, являются ли скобки в строке сбалансированными. Например, для строки "({[]})" результат будет true, а для "{[}" — false.
     public static void main(String[] args) {
-        String task = "[]{}{}[]()";
-        boolean answer = checkBalancedBrackets(task);
-        if (answer) {
+        String task1 = "[]{}{}[]()";
+        if (checkBalancedBrackets1(task1)) {
             System.out.println("Правильно");
         } else {
             System.out.println("Не правильно");
         }
+
     }
 
-    private static boolean checkBalancedBrackets(String message) {
+    private static boolean checkBalancedBrackets1(String message) {
         Stack<Character> stack = new Stack<>();
 
         for (int i = 0; i < message.length(); i++) {
@@ -32,9 +29,9 @@ public class Task3 {
                 }
 
                 char top = stack.pop();
-                if((current == '(' && top != ')') ||
-                        (current == '{' && top != '}') ||
-                        (current == '[' && top != ']') ){
+                if((current == ')' && top != '(') ||
+                        (current == '}' && top != '{') ||
+                        (current == ']' && top != '[') ){
                     return false;
                 }
             }
@@ -42,4 +39,5 @@ public class Task3 {
 
         return true;
     }
+
 }
