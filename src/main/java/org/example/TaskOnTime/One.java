@@ -1,8 +1,6 @@
 package org.example.TaskOnTime;
 
-import java.util.Arrays;
-import java.util.Scanner;
-import java.util.Stack;
+import java.util.*;
 
 public class One {
     //Время на выполнения 3 первый задач 30 минут
@@ -25,6 +23,7 @@ public class One {
 //        task3();
 //        task4();
 //        task5();
+        task8();
 //        task9();
     }
 
@@ -228,6 +227,7 @@ public class One {
         //
         //Выходные данные:
         //Длина кратчайшего пути или -1.
+
     }
 
     private static void task7(){
@@ -282,6 +282,38 @@ public class One {
         //1 6
         //8 10
         //15 18
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        int[][] intervals = new int[N][2];
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < 2; j++) {
+                intervals[i][j] = sc.nextInt();
+            }
+        }
+
+        Arrays.sort(intervals,(i1,i2) -> i1[0] - i2[0]);
+        List<Integer[]> merge = new ArrayList<>();
+        int[] prev = intervals[0];
+        for (int i = 1; i < intervals.length; i++) {
+            int[] current = intervals[i];
+            if(current[0] <= prev[1]){
+                prev[1] = Math.max(prev[1],current[1]);
+            }
+            else{
+                merge.add(new Integer[]{prev[0],prev[1]});
+                prev = current;
+            }
+        }
+        merge.add(new Integer[]{prev[0],prev[1]});
+
+        int[][] result = new int[merge.size()][2];
+        int i = 0;
+        for (Integer[] integers : merge) {
+           result[i][0] = integers[0];
+           result[i][1] = integers[1];
+           i++;
+        }
+
     }
 
     private static void task9(){
